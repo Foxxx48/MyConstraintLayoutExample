@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/servant_banner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/servant_banner" />
+
+    <ImageView
+        android:id="@+id/servant_poster"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@id/guideline5"
+        app:srcCompat="@drawable/servant_poster"
+        tools:layout_editor_absoluteY="239dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="240dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/movie_title"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Servant"
+        android:textColor="@color/white"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@+id/servant_poster"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+    <TextView
+        android:id="@+id/director_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Director: "
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/movie_title" />
+
+    <TextView
+        android:id="@+id/director_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="M. Night Shyamalan"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBaseline_toBaselineOf="@id/director_label"
+        app:layout_constraintEnd_toStartOf="@+id/servant_poster"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/director_label" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/bottom_barrier"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids=" director_label, director_name, servant_banner, servant_poster, movie_title" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Проживающих в Филадельфии супругов Тёрнер можно назвать зажиточной семьёй: Шон является востребованным шеф-поваром, поэтому может позволить себе творить на заказ, не выходя из дома, а Дороти ведёт новостные репортажи на местном телевидении. Но некоторое время назад к ним пришла беда — они потеряли трёхмесячного малыша. Дороти никак не может оправиться от трагедии, поэтому продолжает нянчить реалистичную куклу и даже нанимает для этих целей няню, девушку Лиенн. А та будто ничего не замечает и обращается с куклой как с живым младенцем. Вскоре в доме Тёрнеров начнут происходить и куда более странные вещи."
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/bottom_barrier" />
+
+    <TextView
+        android:id="@+id/actors_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Actors: "
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/description" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="actor1, actor2, actor3, actor4, actor5"
+        app:flow_wrapMode="aligned"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/actors_label"
+        />
+
+    <TextView
+        android:id="@+id/actor1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape1"
+        android:padding="3dp"
+        android:text="Lauren Ambrose"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/actor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape1"
+        android:padding="3dp"
+        android:text="Toby Kebbell"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/actor3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape1"
+        android:padding="3dp"
+        android:text="Nell Tiger Free"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/actor4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape1"
+        android:padding="3dp"
+        android:text="Rupert Grint"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="614dp" />
+
+    <TextView
+        android:id="@+id/actor5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape1"
+        android:padding="3dp"
+        android:text="Tony Revolori"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="614dp" />
+
+
+
+    <Button
+        android:id="@+id/btn_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Like"
+        app:layout_constraintTop_toBottomOf="@id/guideline6"
+        app:layout_constraintEnd_toStartOf="@+id/btn_watch"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        tools:layout_editor_absoluteY="649dp" />
+
+    <Button
+        android:id="@+id/btn_watch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Watch"
+        app:layout_constraintTop_toBottomOf="@id/guideline6"
+        app:layout_constraintEnd_toStartOf="@+id/btn_share"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_like"
+        tools:layout_editor_absoluteY="649dp" />
+
+    <Button
+        android:id="@+id/btn_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share"
+        app:layout_constraintTop_toBottomOf="@id/guideline6"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_watch"
+        tools:layout_editor_absoluteY="649dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="667dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
