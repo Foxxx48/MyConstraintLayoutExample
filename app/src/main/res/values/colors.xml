@@ -8,4 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="common_border_color">#F5EFEF</color>
+    <color name="new_red">#ff153c</color>
+    <color name="new_gray">#848484</color>
+    <color name="new_yellow">#FFEB3B</color>
 </resources>

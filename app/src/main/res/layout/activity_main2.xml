@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="15dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_end="16dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/batman_banner"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/batman_banner" />
+
+    <ImageView
+        android:id="@+id/batman_poster"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="@id/guideline_start1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.877"
+        app:srcCompat="@drawable/batman_poster" />
+
+    <TextView
+        android:id="@+id/batman_movie_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto"
+        android:text="The Dark Knight Rises"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@+id/bookmark_add"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/batman_poster"
+        app:layout_constraintTop_toBottomOf="@+id/batman_banner" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="184dp" />
+
+    <ImageView
+        android:id="@+id/bookmark_add"
+        android:layout_width="38dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end1"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:srcCompat="@drawable/ic_bookmark_add" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="313dp" />
+
+    <TextView
+        android:id="@+id/short_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="July 2012 PG-13 165 min."
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintStart_toEndOf="@+id/batman_poster"
+        app:layout_constraintTop_toBottomOf="@+id/batman_movie_title"
+        app:layout_constraintVertical_bias="1" />
+
+    <Button
+        android:id="@+id/ac2_btn_rent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/new_red"
+        android:text="rent from R29,99"
+        app:layout_constraintEnd_toStartOf="@+id/act2_btn2_buy"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <Button
+        android:id="@+id/act2_btn2_buy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/new_red"
+        android:text="Buy from R127,99"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ac2_btn_rent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <View
+        android:id="@+id/gray_line1"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:alpha="0.35"
+        android:background="@color/material_dynamic_neutral60"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end1"
+        app:layout_constraintStart_toStartOf="@id/guideline_start1"
+        app:layout_constraintTop_toBottomOf="@id/ac2_btn_rent" />
+
+    <TextView
+        android:id="@+id/ac2_tv_rating"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/ic_octagon"
+        android:gravity="center"
+        android:text="8.2"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/ac2_tv_family"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ac2_btn_rent" />
+
+    <TextView
+        android:id="@+id/ac2_tv_family"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/red_round"
+        android:foreground="@drawable/ic_family"
+        android:text=""
+        app:layout_constraintEnd_toStartOf="@+id/ac2_iv_tomato"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ac2_tv_rating"
+        app:layout_constraintTop_toBottomOf="@+id/ac2_btn_rent" />
+
+    <ImageView
+        android:id="@+id/ac2_iv_tomato"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toStartOf="@+id/ac2_tv_similar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ac2_tv_family"
+        app:layout_constraintTop_toBottomOf="@+id/act2_btn2_buy"
+        app:srcCompat="@drawable/tomato_png" />
+
+    <TextView
+        android:id="@+id/ac2_tv_similar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/red_round"
+        android:foreground="@drawable/ic_live_help"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ac2_iv_tomato"
+        app:layout_constraintTop_toBottomOf="@+id/act2_btn2_buy" />
+
+    <TextView
+        android:id="@+id/ac2_tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="242 ratings"
+        app:layout_constraintEnd_toEndOf="@+id/ac2_tv_rating"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start1"
+        app:layout_constraintTop_toBottomOf="@+id/ac2_tv_rating" />
+
+    <TextView
+        android:id="@+id/ac2_tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Family"
+        app:layout_constraintEnd_toEndOf="@+id/ac2_tv_family"
+        app:layout_constraintStart_toStartOf="@+id/ac2_tv_family"
+        app:layout_constraintTop_toBottomOf="@id/ac2_tv_family"
+        app:layout_constraintBaseline_toBaselineOf="@id/ac2_tv1"/>
+
+    <TextView
+        android:id="@+id/ac2_tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="71%"
+        app:layout_constraintEnd_toEndOf="@+id/ac2_iv_tomato"
+        app:layout_constraintStart_toStartOf="@+id/ac2_iv_tomato"
+        app:layout_constraintTop_toBottomOf="@+id/ac2_iv_tomato"
+        app:layout_constraintBaseline_toBaselineOf="@id/ac2_tv1"/>
+
+    <TextView
+        android:id="@+id/ac2_tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="17dp"
+        android:text="Similar"
+        app:layout_constraintEnd_toEndOf="@+id/ac2_tv_similar"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end1"
+        app:layout_constraintStart_toStartOf="@+id/ac2_tv_similar"
+        app:layout_constraintTop_toBottomOf="@+id/ac2_tv_similar"
+        app:layout_constraintBaseline_toBaselineOf="@id/ac2_tv1"/>
+
+    <View
+        android:id="@+id/gray_line2"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="16dp"
+        android:alpha="0.35"
+        android:background="@color/material_dynamic_neutral60"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guideline_start1"
+        app:layout_constraintTop_toBottomOf="@+id/ac2_tv2" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="Восемь лет назад Бэтмен растворился в ночи, превратившись из героя в беглеца. Приняв на себя вину за смерть прокурора Харви Дента, он пожертвовал всем. Вместе с комиссаром Гордоном они решили, что так будет лучше для всех. Пока преступность была раздавлена антикриминальным актом Дента, ложь действовала.  Тем не менее, еще опаснее становится появление нового врага Бэйна, чье лицо закрыто маской. Он разворачивает в Готэме чудовищную деятельность, и это вынуждает Брюса Уэйна выйти из импровизированного изгнания. Однако даже надев свой костюм, Бэтмен может проиграть Бэйну. Но с появлением хитрой воровки по прозвищу Женщина — Кошка с загадочным прошлым всё меняется."
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end1"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start1"
+        app:layout_constraintTop_toBottomOf="@+id/gray_line2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
